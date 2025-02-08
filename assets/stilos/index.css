@@ -16,7 +16,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 10px rgba(81, 81, 81, 0.3);
 }
 .linkindex{
     text-decoration: none;
@@ -36,7 +36,7 @@
     background-position: center;
     background-size: cover;
     border-radius: 20px;
-    box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
+    box-shadow: 0 20px 30px rgba(250, 250, 250, 0.3) inset;
     transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
 }
 .custom-slider-section .item::after {
@@ -46,7 +46,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Capa oscura semi-transparente */
+    background: rgba(43, 42, 42, 0.5); /* Capa oscura semi-transparente */
     backdrop-filter: blur(2px); /* Aplica un difuminado sutil */
     z-index: 1; /* Coloca la capa encima de la imagen */
     pointer-events: none; /* Permite interactuar con el contenido debajo */
