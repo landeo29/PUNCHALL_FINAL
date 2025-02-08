@@ -6,7 +6,7 @@ function nextSlide() {
     slider.appendChild(items[0]); // Mueve el primer elemento al final
 }
 
-setInterval(nextSlide, 4000);
+setInterval(nextSlide, 6000);
 
 function activate(e) {
     if (!e.target.matches('.next, .prev')) return;
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Cambiar slide automáticamente cada 4 segundos
     const startAutoSlide = () => {
-        slideInterval = setInterval(nextSlide, 4000);
+        slideInterval = setInterval(nextSlide, 6000);
     };
 
     // Detener el slider cuando el usuario hace clic en un botón de navegación

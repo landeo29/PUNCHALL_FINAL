@@ -449,6 +449,101 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* 📌 Responsivo para Tablets Grandes (769px a 1024px) */
+/* 📌 RESPONSIVO PARA PANTALLAS GRANDES (OCULTAR IMAGEN A PARTIR DE 1024px) */
+@media (max-width: 1024px) {
+    .wave-image {
+        display: none !important; /* 🔥 La imagen desaparece en 1024px o menos */
+    }
+}
+
+/* 📌 RESPONSIVO PARA TABLETS GRANDES (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .wave-content {
+        max-width: 80%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 1.5rem;
+    }
+
+    .wave-content h1 {
+        font-size: 3.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .wave-content h2 {
+        font-size: 2rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .wave-content p {
+        font-size: 1.2rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* 📌 RESPONSIVO PARA TABLETS (HASTA 768px) */
+@media (max-width: 768px) {
+    .wave-content {
+        max-width: 90%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    .wave-content h1 {
+        font-size: 3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .wave-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .wave-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* 📌 RESPONSIVO PARA MÓVILES (HASTA 650px) */
+@media (max-width: 650px) {
+    .wave-container {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .wave-content {
+        max-width: 95%;
+        padding: 1rem;
+    }
+
+    .wave-content h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 0.8rem;
+    }
+
+    .wave-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .wave-content p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+}
+
+
 /* 📌 Responsivo para Tablets (hasta 768px) */
 @media (max-width: 768px) {
     .wave-content {
@@ -517,6 +612,7 @@
         display: none !important;
     }
 }
+
 
 /*Fin Seccion 2*/
 
