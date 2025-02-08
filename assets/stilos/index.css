@@ -1,0 +1,1254 @@
+/* Encapsular estilos solo dentro de .custom-slider-section */
+.custom-slider-section * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.custom-slider-section {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.custom-slider-section section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+.linkindex{
+    text-decoration: none;
+    color: #fff;
+}
+.linkindex:hover{
+    color: #2c2cda;
+}
+.custom-slider-section .item {
+    width: 200px;
+    height: 300px;
+    list-style-type: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
+    transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+}
+.custom-slider-section .item::after {
+    content: ''; /* Genera una capa encima */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Capa oscura semi-transparente */
+    backdrop-filter: blur(2px); /* Aplica un difuminado sutil */
+    z-index: 1; /* Coloca la capa encima de la imagen */
+    pointer-events: none; /* Permite interactuar con el contenido debajo */
+}
+
+.custom-slider-section .item:nth-child(1),
+.custom-slider-section .item:nth-child(2) {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+}
+
+.custom-slider-section .item:nth-child(3) {
+    left: 80%;
+}
+
+.custom-slider-section .item:nth-child(4) {
+    left: calc(50% + 220px);
+}
+
+.custom-slider-section .item:nth-child(5) {
+    left: calc(50% + 440px);
+}
+
+.custom-slider-section .item:nth-child(6) {
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+.custom-slider-section .content {
+    width: min(40vw, 5000px); /* Más ancho para mejorar la distribución del texto */
+    position: absolute;
+    z-index: 2; /* Coloca el contenido por encima de la capa oscura */
+
+    top: 50%; /* Centrado verticalmente */
+    left: 8rem; /* Espaciado desde el lado izquierdo */
+    transform: translateY(-50%);
+    font-family: "Helvetica", sans-serif; /* Fuente legible y moderna */
+    color: white; /* Texto blanco */
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); /* Sombra más sutil para legibilidad */
+    line-height: 1.8; /* Espaciado cómodo entre líneas */
+    text-align: left; /* Alinea el texto a la izquierda (no justificado) */
+    opacity: 0; /* Oculto por defecto */
+    display: none; /* No visible inicialmente */
+}
+
+.custom-slider-section .content .title {
+    font-family: "Arial Black", sans-serif; /* Fuente destacada */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    font-size: 4rem; /* Tamaño equilibrado para destacar sin dominar */
+    margin-bottom: 1.5rem; /* Espacio debajo del título */
+    letter-spacing: 1px; /* Espaciado entre letras para claridad */
+    color: #2c2cda; /* Azul vibrante */
+}
+
+.custom-slider-section .content .description {
+    font-family: "Roboto", sans-serif; /* Fuente moderna para lectura */
+    font-size: 1.3rem; /* Ajuste a un tamaño cómodo */
+    line-height: 1.8; /* Mejor espaciado entre líneas */
+    margin-bottom: 2rem; /* Espacio debajo de la descripción */
+    color: #fdfefe ; /* Gris claro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-align: left; /* Alineación lineal */
+    word-wrap: break-word; /* Evita desbordamientos de texto */
+}
+
+.custom-slider-section .content button {
+    display: inline-block;
+    background-color: rgba(44, 44, 218, 0.8); /* Fondo azul con más opacidad */
+    color: white; /* Texto blanco */
+    font-family: "Roboto", sans-serif; /* Fuente moderna */
+    font-weight: bold;
+    font-size: 1rem; /* Tamaño cómodo del botón */
+    padding: 1rem 2rem; /* Más relleno para destacar el botón */
+    border: none; /* Elimina bordes adicionales */
+    border-radius: 0.5rem; /* Bordes ligeramente redondeados */
+    cursor: pointer;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    transition: all 0.3s ease-in-out; /* Transiciones suaves */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para resaltar el botón */
+}
+
+.custom-slider-section .content button:hover {
+    background-color: white; /* Fondo blanco al pasar el mouse */
+    color: #2c2cda; /* Azul vibrante para el texto */
+    transform: translateY(-3px); /* Efecto de elevación */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+.custom-slider-section .item:nth-of-type(2) .content {
+    display: block;
+    animation: show 0.75s ease-in-out 0.3s forwards;
+}
+
+@keyframes show {
+    0% {
+        filter: blur(5px);
+        transform: translateY(calc(-50% + 75px));
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.custom-slider-section .nav {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    user-select: none;
+}
+
+.custom-slider-section .nav .btn {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    margin: 0 0.25rem;
+    padding: 0.75rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.custom-slider-section .nav .btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Adaptaciones para dispositivos medianos */
+/* 📌 Estilos para dispositivos pequeños (Móviles) */
+@media (max-width: 650px) {
+    .custom-slider-section .content {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 1.5rem; /* Más espacio para que no se vea apretado */
+        text-align: center; /* Centrar texto */
+        margin-top: -80px;
+        position: absolute;
+        top: 20%;
+    }
+
+    .custom-slider-section .content .title {
+        font-size: 2.8rem; /* 🔥 Aún más grande para destacar */
+        font-weight: bold; /* Hacerlo más grueso */
+        margin-bottom: 1rem;
+    }
+
+    .custom-slider-section .content .description {
+        font-size: 1.3rem; /* 🔥 Texto mucho más grande */
+        line-height: 1.8; /* Mejor separación entre líneas */
+    }
+
+    .custom-slider-section .content button {
+        font-size: 1.2rem; /* 🔥 Botón más llamativo */
+        padding: 1rem 1.8rem; /* Aumentar tamaño del botón */
+        font-weight: bold;
+    }
+
+    /* Ajustes para el slider */
+    .custom-slider-section .item {
+        width: 90%; /* Aprovechar más el espacio */
+        height: auto;
+    }
+
+    .custom-slider-section .item:nth-child(3) {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .custom-slider-section .item:nth-child(4),
+    .custom-slider-section .item:nth-child(5),
+    .custom-slider-section .item:nth-child(6) {
+        left: calc(50% + 120px);
+    }
+}
+
+/* 📌 Estilos para dispositivos medianos (Tablets) */
+@media (max-width: 650px) {
+    .custom-slider-section .content {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 1rem; /* 🔧 Reducimos un poco el padding */
+        margin-top: -20px; /* 🔥 Subimos el contenido */
+        text-align: center;
+    }
+
+    .custom-slider-section .content .title {
+        font-size: 2.8rem;
+        font-weight: bold;
+        margin-bottom: 0.7rem;
+    }
+
+    .custom-slider-section .content .description {
+        font-size: 1.3rem;
+        line-height: 1.8;
+    }
+
+    .custom-slider-section .content button {
+        font-size: 1.2rem;
+        padding: 1rem 1.8rem;
+        font-weight: bold;
+    }
+
+    /* Ajustes para el slider */
+    .custom-slider-section .item {
+        width: 85%;
+        height: auto;
+    }
+
+    .custom-slider-section .item:nth-child(3) {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .custom-slider-section .item:nth-child(4),
+    .custom-slider-section .item:nth-child(5),
+    .custom-slider-section .item:nth-child(6) {
+        left: calc(50% + 120px);
+    }
+}
+
+/*seccion 2*/
+
+.icon-x {
+    font-family: "Poppins", sans-serif; /* Fuente moderna */
+    font-weight: bold;
+    font-size: 24px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Contenedor Principal */
+.wave-slider {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #e6ffe6, #ccffcc); /* Fondo gradiente sutil */
+    font-family: "Poppins", sans-serif; /* Fuente para todo el slider */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Elementos decorativos flotantes */
+.wave-slider::before, .wave-slider::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 255, 128, 0.1);
+    border-radius: 50%;
+    animation: float 10s ease-in-out infinite;
+    z-index: 0;
+}
+
+.wave-slider::before {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.wave-slider::after {
+    bottom: 10%;
+    right: 25%;
+    animation-delay: 5s;
+}
+
+/* Animación flotante */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.1);
+    }
+}
+
+/* Cada Slide */
+.wave-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 1s ease, opacity 1s ease;
+    z-index: 1;
+}
+
+.wave-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Contenido del Slide */
+.wave-content {
+    position: relative;
+    z-index: 2;
+    max-width: 50%;
+    padding: 0 5%;
+    text-align: left;
+}
+
+.wave-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: #002f5f;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 1.5px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.wave-content h1:hover {
+    transform: scale(1.1);
+    color: #00466B;
+}
+
+.wave-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #00567A;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1px;
+}
+
+.wave-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Imagen con Forma Ondulada */
+.wave-image {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+    z-index: 1;
+}
+
+.wave-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease, filter 0.5s ease;
+    filter: brightness(80%);
+}
+
+.wave-slide.active .wave-image img:hover {
+    transform: scale(1.1);
+    filter: brightness(100%);
+}
+
+/* Navegación */
+.wave-navigation {
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 3;
+}
+
+.nav-btn {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn:hover {
+    transform: scale(1.2);
+    background: #80d8ff;
+}
+
+.nav-btn.active {
+    background: #0099cc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 📌 Responsivo para Tablets (hasta 768px) */
+@media (max-width: 768px) {
+    .wave-content {
+        max-width: 90%; /* 🔥 Más ancho para aprovechar espacio */
+        text-align: center;
+        margin: 0 auto; /* 🔥 Centrado */
+        padding: 1rem;
+    }
+
+    .wave-content h1 {
+        font-size: 3rem; /* 🔥 Más grande para destacar */
+        margin-bottom: 0.8rem;
+    }
+
+    .wave-content h2 {
+        font-size: 1.8rem; /* 🔥 Un poco más grande */
+        margin-bottom: 0.6rem;
+    }
+
+    .wave-content p {
+        font-size: 1rem; /* 🔥 Más legible */
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .wave-image {
+        width: 100%;
+        max-height: 300px; /* 🔥 Evitar que se expanda demasiado */
+        clip-path: none;
+    }
+
+    .wave-navigation {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 1.5rem;
+    }
+
+    .nav-btn {
+        width: 14px; /* 🔥 Botones más grandes */
+        height: 14px;
+    }
+}
+
+/* 📌 Responsivo para Móviles (hasta 480px) */
+/* 🔥 SOLO PARA MÓVILES (max-width: 480px) */
+@media (max-width: 650px) {
+    .wave-container {
+        display: flex !important;
+        flex-direction: column-reverse !important; /* 🔥 Imagen abajo */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .wave-content {
+        max-width: 95%;
+        padding: 1rem;
+    }
+
+    .wave-content h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 0.8rem;
+    }
+
+    .wave-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .wave-content p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .wave-image {
+        display: none !important; /* 🔥 La imagen desaparece en móviles */
+    }
+}
+
+
+
+
+/*Fin Seccion 2*/
+
+/*Seccion 3*/
+/* Fondo diagonal con animación dinámica */
+.cards__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Ajusta automáticamente en pantallas pequeñas */
+    gap: 2rem;
+    min-height: 100vh;
+    padding: 2rem;
+    background: linear-gradient(
+            135deg,
+            #e6f9ff 25%,
+            #80d8ff 25%,
+            #80d8ff 50%,
+            #4fc3f7 50%,
+            #4fc3f7 75%,
+            #e6f9ff 75%
+    );
+    background-size: 200% 200%;
+    animation: moveBackground 10s infinite linear;
+}
+
+/* Fondo animado */
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Tarjeta */
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    height: auto;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    margin: 20px; /* Reduce márgenes en pantallas pequeñas */
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Efecto dinámico con luz */
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 150, 250, 0.3), transparent);
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    z-index: 0;
+}
+
+.card:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Icono con rotación */
+.card__icon img {
+    width: 150px; /* Tamaño más pequeño por defecto */
+    height: 150px;
+    margin-bottom: 1rem;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.card:hover .card__icon img {
+    transform: rotate(10deg) scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* Contenido */
+.card__content {
+    position: relative;
+    z-index: 1;
+}
+
+.card__title {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    color: #002244;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.card:hover .card__title {
+    color: #00568F; /* Azul vibrante */
+}
+
+.card__text {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.8;
+    transition: color 0.3s ease;
+}
+
+.card:hover .card__text {
+    color: #333; /* Texto más oscuro */
+}
+
+/* 📌 RESPONSIVO PARA TABLETS Y MÓVILES (HASTA 1024px) */
+@media (max-width: 1024px) {
+    .cards__container {
+        gap: 1.5rem;
+    }
+
+    .card {
+        margin: 20px 10px;
+    }
+
+    .card__icon img {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* 📌 RESPONSIVO PARA TABLETS (HASTA 768px) */
+@media (max-width: 768px) {
+    .cards__container {
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .card {
+        max-width: 90%;
+    }
+
+    .card__title {
+        font-size: 1.8rem;
+    }
+
+    .card__text {
+        font-size: 1rem; /* 🔥 Un poco más grande para mejorar lectura */
+        line-height: 1.6;
+    }
+
+    .card__icon img {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+/* 📌 RESPONSIVO PARA MÓVILES (HASTA 480px) */
+@media (max-width: 480px) {
+    .cards__container {
+        gap: 0.8rem; /* 🔥 Espacio más compacto */
+        padding: 1rem;
+    }
+
+    .card {
+        max-width: 95%;
+        margin: 15px auto; /* 🔥 Centrado automático */
+        padding: 15px;
+    }
+
+    .card__icon img {
+        width: 90px; /* 🔥 Íconos más pequeños */
+        height: 90px;
+    }
+
+    .card__title {
+        font-size: 1.5rem;
+        text-align: center; /* 🔥 Centramos los títulos */
+    }
+
+    .card__text {
+        font-size: 0.9rem;
+        text-align: center;
+        line-height: 1.5;
+    }
+}
+
+/*Seccion Testimosnial*/
+
+.testimonial-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+
+.testimonial-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 300px; /* Ajusta la altura según sea necesario */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    overflow: hidden;
+}
+
+/* Imagen de fondo */
+.testimonial-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen ocupe todo el contenedor */
+    z-index: 0; /* Coloca la imagen al fondo */
+}
+
+/* Fondo azul translúcido */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            90deg,
+            rgba(44, 44, 218, 0.6) 0%,
+            rgba(0, 0, 100, 0.6) 100%
+    );
+    z-index: 1;
+}
+
+/* Contenido del texto */
+.testimonial-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 30px;
+    max-width: 50%;
+    text-align: left;
+}
+.testimonial-text {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    font-size: 1rem;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+/* 📌 RESPONSIVO PARA TABLETS (HASTA 1024px) */
+@media screen and (max-width: 1024px) {
+    .testimonial-container {
+        height: 250px; /* Reduce la altura del contenedor */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .testimonial-content {
+        max-width: 80%; /* 🔥 Más ancho para mejor legibilidad */
+        padding: 20px;
+    }
+
+    .testimonial-text {
+        font-size: 1.2rem; /* 🔥 Un poco más grande para tablets */
+        line-height: 1.6;
+    }
+
+    .testimonial-author {
+        font-size: 1rem;
+        font-weight: bold; /* 🔥 Resaltar un poco más el autor */
+    }
+}
+
+/* 📌 RESPONSIVO PARA MÓVILES (HASTA 768px) */
+@media screen and (max-width: 768px) {
+    .testimonial-container {
+        height: 220px; /* 🔥 Ajustamos altura */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .testimonial-content {
+        max-width: 95%; /* 🔥 Más espacio en móviles */
+        padding: 15px;
+        text-align: center;
+    }
+
+    .testimonial-text {
+        font-size: 1.1rem; /* 🔥 Tamaño adecuado */
+        line-height: 1.6;
+    }
+
+    .testimonial-author {
+        font-size: 0.9rem;
+    }
+}
+
+/* 📌 RESPONSIVO PARA MÓVILES (HASTA 480px) */
+@media screen and (max-width: 480px) {
+    .testimonial-container {
+        height: auto; /* 🔥 Permitir altura flexible */
+        padding: 20px; /* 🔥 Más espacio interno */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .testimonial-content {
+        max-width: 90%;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .testimonial-text {
+        font-size: 1rem; /* 🔥 Aumentamos un poco para mejor legibilidad */
+        line-height: 1.8; /* 🔥 Más espacio entre líneas */
+        font-weight: bold;
+        color: white; /* 🔥 Asegurar buena visibilidad */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* 🔥 Contraste con el fondo */
+    }
+
+    .testimonial-author {
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin-top: 10px; /* 🔥 Separación del texto */
+        color: white;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 🔥 Mejorar la superposición del fondo */
+    .testimonial-container::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4); /* 🔥 Capa oscura para mejorar contraste */
+        border-radius: 15px;
+    }
+}
+
+
+/*Fin seccion testimonial*/
+
+
+/*Secciion stack*/
+/* ===== Sección de Polígonos 3D ===== */
+
+/* Fondo general */
+.three-d-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(120deg, #eef2f3, #8e9eab); /* Fondo suave */
+    color: white;
+    overflow: hidden;
+}
+
+/* Título */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #3a3d5c; /* Tono suave */
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
+/* Contenedor general */
+.three-d-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Espacio entre filas */
+}
+
+/* Fila superior (7 polígonos, centrados) */
+.row-top {
+    display: flex;
+    gap: 20px; /* Espacio entre polígonos */
+    justify-content: center;
+    flex-wrap: wrap; /* Permite ajustes en pantallas más pequeñas */
+}
+
+/* Fila inferior (6 polígonos, centrados) */
+.row-bottom {
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Centra la fila en móviles */
+    flex-wrap: wrap;
+}
+
+/* Polígono 3D */
+.polygon-container {
+    perspective: 1000px;
+}
+
+.polygon {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: transparent; /* Colores suaves */
+    clip-path: none;
+    border-radius: 0%; /* Suaviza las esquinas */
+    box-shadow:
+            0 5px 15px rgba(0, 0, 0, 0),
+            inset 0 -5px 10px rgba(255, 255, 255, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Imagen del icono */
+.polygon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transform: translateZ(30px);
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* Hover dinámico */
+.polygon-container:hover .polygon {
+    transform: rotateX(20deg) rotateY(-20deg) scale(1.05);
+    box-shadow:
+            0 10px 20px rgba(0, 0, 0, 0),
+            inset 0 -5px 15px rgba(255, 255, 255, 0);
+}
+
+.polygon-container:hover img {
+    transform: translateZ(40px) scale(1.1);
+}
+
+/* ===== RESPONSIVIDAD ===== */
+
+/* 📌 RESPONSIVO PARA TABLETS (HASTA 1024px) */
+@media (max-width: 1024px) {
+    .three-d-grid {
+        gap: 15px; /* 🔥 Menos espacio entre elementos */
+    }
+
+    .row-top, .row-bottom {
+        justify-content: center; /* 🔥 Centrar los elementos */
+        flex-wrap: wrap; /* 🔥 Permite mejor ajuste en tablets */
+    }
+
+    .polygon {
+        width: 100px; /* 🔥 Ajuste de tamaño para tablets */
+        height: 100px;
+    }
+}
+
+/* 📌 RESPONSIVO PARA MÓVILES (HASTA 768px) */
+@media (max-width: 768px) {
+    .three-d-grid {
+        gap: 10px; /* 🔥 Reduce más el espacio */
+        padding: 10px;
+    }
+
+    .row-top, .row-bottom {
+        flex-direction: row; /* 🔥 Mantiene los elementos en línea */
+        flex-wrap: wrap; /* 🔥 Evita que se desborden */
+        justify-content: center; /* 🔥 Centra los elementos */
+    }
+
+    .polygon {
+        width: 80px; /* 🔥 Tamaño más pequeño para móviles */
+        height: 80px;
+    }
+}
+
+/* 📌 RESPONSIVO PARA MÓVILES PEQUEÑOS (HASTA 480px) */
+@media (max-width: 480px) {
+    .three-d-grid {
+        gap: 8px; /* 🔥 Espaciado más ajustado */
+    }
+
+    .polygon {
+        width: 70px; /* 🔥 Polígonos más pequeños */
+        height: 70px;
+    }
+}
+
+/*Fin seccion stack*/
+
+/*Seccion azul*/
+/* ===== Sección de CTA ===== */
+
+.cta-section-unique {
+    position: relative;
+    background: #a4d0f9; /* Degradado azul pastel */
+    color: #1e293b; /* Azul oscuro suave */
+    text-align: center;
+    padding: 80px 20px;
+    overflow: hidden; /* Para controlar los elementos decorativos */
+    min-height: 70vh; /* Altura mínima */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif; /* Fuente principal */
+}
+
+/* Elementos decorativos animados */
+.cta-section-unique::before,
+.cta-section-unique::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: float 8s ease-in-out infinite;
+    z-index: 0;
+}
+
+.cta-section-unique::before {
+    width: 350px;
+    height: 350px;
+    top: -150px;
+    left: -100px;
+    animation-duration: 10s;
+}
+
+.cta-section-unique::after {
+    width: 250px;
+    height: 250px;
+    bottom: -100px;
+    right: -50px;
+    animation-duration: 12s;
+}
+
+/* Animación flotante */
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(20px) translateX(10px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+/* Contenedor */
+.cta-container-unique {
+    max-width: 800px;
+    position: relative;
+    z-index: 1; /* Coloca el contenido encima de los decorativos */
+    background: rgba(255, 255, 255, 0.5); /* Fondo translúcido */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Efecto vidrio */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-container-unique:hover {
+    transform: scale(1.02); /* Pequeño zoom */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Título */
+.cta-title-unique {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Merriweather', serif; /* Fuente para el título */
+    font-weight: bold;
+    color: #1e293b; /* Azul oscuro suave */
+}
+
+.cta-title-unique span {
+    color: #2563eb; /* Azul más intenso para destacar */
+}
+
+/* Descripción */
+.cta-description-unique {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    color: #334155; /* Gris azulado */
+}
+
+/* Botones */
+.cta-buttons-unique {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ajusta en móviles */
+}
+
+.cta-button-unique {
+    padding: 15px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Botón primario */
+.primary-button-unique {
+    background: #2563eb; /* Azul intenso */
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.primary-button-unique:hover {
+    transform: translateY(-5px);
+    background: #1d4ed8; /* Azul más oscuro en hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón secundario */
+.secondary-button-unique {
+    background: transparent;
+    color: #1e293b; /* Azul oscuro */
+    border: 2px solid #2563eb; /* Bordes azules */
+}
+
+.secondary-button-unique:hover {
+    transform: translateY(-5px);
+    background: #93c5fd; /* Azul pastel */
+    color: #1e293b;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== RESPONSIVIDAD ===== */
+
+/* Para tabletas */
+/* 📌 RESPONSIVO PARA TABLETS (HASTA 1024px) */
+@media screen and (max-width: 1024px) {
+    .cta-title-unique {
+        font-size: 2.5rem; /* 🔥 Más grande para destacar */
+        font-weight: bold;
+    }
+
+    .cta-description-unique {
+        font-size: 1.2rem; /* 🔥 Mejor legibilidad */
+        line-height: 1.6;
+    }
+
+    .cta-buttons-unique {
+        gap: 20px;
+    }
+}
+
+/* 📌 RESPONSIVO PARA MÓVILES (HASTA 768px) */
+@media screen and (max-width: 768px) {
+    .cta-title-unique {
+        font-size: 2.2rem; /* 🔥 Aún más grande */
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .cta-description-unique {
+        font-size: 1.2rem; /* 🔥 Más legible */
+        line-height: 1.7;
+        text-align: center;
+    }
+
+    .cta-buttons-unique {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .cta-button-unique {
+        padding: 14px 24px;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+}
+
+/* 📌 RESPONSIVO PARA MÓVILES PEQUEÑOS (HASTA 480px) */
+@media screen and (max-width: 480px) {
+    .cta-title-unique {
+        font-size: 2.5rem; /* 🔥 Hacerlo extra grande */
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .cta-description-unique {
+        font-size: 1.3rem; /* 🔥 Más grande para destacar */
+        line-height: 1.8;
+        text-align: center;
+    }
+
+    .cta-buttons-unique {
+        gap: 20px;
+    }
+
+    .cta-button-unique {
+        padding: 16px 26px;
+        font-size: 1.2rem; /* 🔥 Botón más grande */
+        font-weight: bold;
+        border-radius: 8px; /* 🔥 Bordes más suaves */
+        text-transform: uppercase; /* 🔥 Resalta más el texto */
+    }
+}
+
+/*Fin Seccion azul*/

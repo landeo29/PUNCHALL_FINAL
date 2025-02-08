@@ -1,0 +1,569 @@
+/* Barra de navegación flotante con posición dinámica */
+.navbar {
+    position: fixed !important;
+    top: 10px !important;
+    left: 20px !important;
+    right: 20px !important;
+    z-index: 1000;
+    transform: none !important;
+    background-color: rgba(23, 23, 23, 0.9);
+    backdrop-filter: blur(0px);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto al hacer scroll */
+.navbar.scrolled {
+    background-color: rgba(43, 43, 43, 0.7);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(0);
+}
+
+/* Logo */
+/* Contenedor del logo */
+/* Contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Asegura que el logo esté centrado */
+    text-decoration: none;
+    color: white;
+    gap: 15px;
+}
+
+/* Imagen del logo */
+.logo {
+    height: 80px; /* Incrementa el tamaño */
+    width: auto; /* Conserva la proporción natural */
+    max-width: none; /* Elimina cualquier límite */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease; /* Añade un efecto suave */
+}
+
+/* Efecto hover */
+.logo:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el cursor */
+}
+
+
+/* Texto del logo */
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 1.2;
+}
+
+/* Animaciones */
+.logo-container:hover .logo-text {
+    color: #00BF7D;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.logo-container:hover .logo {
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+}
+
+/* Enlaces de navegación */
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 25px; /* Espaciado uniforme entre los enlaces */
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Ocupa todo el espacio restante entre el logo y el selector */
+    justify-content: flex-end; /* Alinea los enlaces hacia la derecha */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px; /* Tamaño compacto */
+    font-weight: 500;
+    white-space: nowrap; /* Evita saltos de línea */
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #10C8E0;
+    transform: translateY(-3px);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ef6705;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Botón Contáctanos */
+.nav-links .contact-link {
+    background: transparent;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links .contact-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.nav-links .contact-link i {
+    font-size: 16px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.nav-links .contact-link:hover i {
+    transform: translateX(5px);
+}
+.nav-links.active {
+    display: flex;
+    opacity: 1;
+    transform: scaleY(1); /* Animación fluida de apertura */
+}
+
+/* Ocultamos desplazamiento al abrir el menú */
+body.menu-open {
+    overflow: hidden;
+}
+
+body.deuteranopia .navbar,
+body.protanopia .navbar,
+body.tritanopia .navbar {
+    position: fixed !important;
+    top: 10px !important;
+    left: 20px !important;
+    right: 20px !important;
+}
+/* Selector de modo de color */
+.color-mode-container {
+    position: static; /* Asegura que no afecte el layout */
+    margin-left: 20px;
+}
+
+.color-mode-select {
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #777;
+    background: linear-gradient(to right, #ffffff, #e6f7ff);
+    font-size: 0.9rem;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    width: 150px;
+    outline: none;
+}
+
+.color-mode-select:hover {
+    background: linear-gradient(to right, #e6f7ff, #b3e0ff);
+    border-color: #555;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.color-mode-select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+body.deuteranopia {
+    filter: grayscale(80%) contrast(1.2) brightness(1.1);
+}
+
+body.protanopia {
+    filter: grayscale(50%) sepia(20%) saturate(1.2) hue-rotate(-30deg);
+}
+
+body.tritanopia {
+    filter: grayscale(50%) sepia(20%) saturate(1.2) hue-rotate(90deg);
+}
+
+body.normal {
+    filter: none;
+}
+
+/* Ocultamos menú hamburguesa en pantallas grandes */
+.menu-toggle {
+    display: none; /* Oculto por defecto en pantallas grandes */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostrar botón hamburguesa */
+    }
+
+    .nav-links {
+        display: none; /* Ocultar menú inicialmente */
+        flex-direction: column; /* Cambiar a formato vertical */
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        right: 20px;
+        background-color: #0c0c0c;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        padding: 15px 0;
+        gap: 15px;
+        z-index: 999;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostrar menú al activar */
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .color-mode-container {
+        margin-top: 10px; /* Mover selector debajo del menú */
+    }
+}
+
+/* Pantallas muy pequeñas (<480px) */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        max-height: 60px;
+    }
+
+    .logo-text {
+        font-size: 14px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .color-mode-select {
+        width: 90%; /* Ajustar el ancho del selector */
+        font-size: 14px;
+    }
+}
+
+
+/* Importar una fuente moderna desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+/* Estilo general del footer */
+.footer__container {
+
+
+
+    background-color: rgba(0, 0, 0, 0.3); /* Sutil fondo para títulos */
+    padding: 5px 10px;
+    border-radius: 5px;
+
+
+    padding: 0px 0px 10px 0px;
+    font-family: 'Poppins', sans-serif; /* Nueva fuente */
+    transition: background 0.5s ease-in-out; /* Efecto suave al cambiar el fondo */
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Fondo animado: partículas y gradiente animado */
+.footer__container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2d6e7b, #d1c788, #814DE5);
+    background-size: 400% 400%; /* Gradiente animado más dinámico */
+    animation: gradientMove 10s infinite alternate; /* Gradiente cambia de color */
+    z-index: -2;
+}
+
+.footer__container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 5%, transparent 50%);
+    animation: particleMove 15s infinite ease-in-out; /* Efecto de partículas suaves */
+    z-index: -1;
+    opacity: 0.6;
+}
+
+/* Logo y enlace del logo */
+.logo-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    z-index: 1;
+}
+
+.logo-link img {
+    display: block;
+    width: 300px; /* Cambia este valor para ajustar el tamaño */
+    height: auto; /* Conserva la proporción */
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease;
+}
+
+
+
+.logo-link img:hover {
+    transform: scale(1.2); /* Agrandar ligeramente el logo al pasar el mouse */
+    filter: drop-shadow(0px 4px 6px rgba(255, 255, 255, 0.5));
+}
+
+.paf {
+    margin-top: 30px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Efecto de sombra y color */
+}
+
+.paf:hover {
+    color: #000000; /* Cambia a dorado */
+    text-shadow: 0px 4px 6px rgba(255, 255, 255, 0.5); /* Brillo en el texto */
+}
+
+/* Contenedor principal */
+.footer__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__logo img {
+    height: 150px;
+    width: auto;
+    display: block;
+}
+
+.footer__logo p {
+    margin-top: 0; /* Ajusta o elimina el espacio entre el logo y el texto */
+    font-size: 1em;
+    color: #000000;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* Links y Servicios alineados a la izquierda */
+.footer__links,
+.footer__services {
+    text-align: left; /* Alineación a la izquierda */
+}
+
+.footer__links h4,
+.footer__services h4,
+.footer__social h4 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-transform: uppercase; /* Todas las letras en mayúscula */
+
+
+
+     /* Títulos en dorado */
+
+
+color: #FFD700;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+
+
+}
+
+.footer__links ul,
+.footer__services ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer__links ul li,
+.footer__services ul li {
+    margin: 10px 0;
+}
+
+.footer__links ul li a,
+.footer__services ul li a {
+
+
+color: #00FFFF;
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+
+
+
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    font-size: 1rem;
+}
+
+.footer__links ul li a:hover {
+    color: #ffd700; /* Cambia a dorado */
+    transform: translateX(5px); /* Se desplaza un poco hacia la derecha */
+}
+
+/* Redes Sociales */
+.footer__social {
+    text-align: center;
+}
+
+.social__icons {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+}
+
+.social__icons a {
+    color: #9fd3c7;
+    font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.social__icons a:hover {
+    background-color: #ffd700; /* Fondo dorado */
+    color: #4e4376; /* Cambia el color del ícono */
+    transform: scale(1); /* Escalado más grande */
+}
+
+/* Pie de página */
+.footer__bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 3px solid #ffd700; /* Línea más visible y en dorado */
+    padding-top: 20px;
+    color: #000000;
+    font-size: 0.9rem;
+}
+
+/* Animación del gradiente */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Animación de partículas */
+@keyframes particleMove {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-30px, -30px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer__content {
+        gap: 15px;
+        padding: 10px 15px;
+    }
+    .footer__logo img {
+        height: 190px;
+    }
+    .footer__logo p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer__content {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+    .footer__logo p {
+        font-size: 1rem;
+    }
+    .social__icons a {
+        font-size: 1em;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__logo img {
+        height: 190px;
+    }
+    .footer__logo p {
+        font-size: 0.9rem;
+    }
+    .footer__bottom {
+        font-size: 0.7rem;
+    }
+    .social__icons a {
+        font-size: 0.9em;
+    }
+}

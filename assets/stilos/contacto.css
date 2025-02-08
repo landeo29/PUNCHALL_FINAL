@@ -1,0 +1,216 @@
+/* SECCIÓN GENERAL */
+.contact-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 100px auto; /* Añadimos margen superior para bajarlo */
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.sent-animation {
+    animation: fadeOut 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.95); }
+}
+/* ELEMENTOS DECORATIVOS */
+.design-elements {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-image {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: contain; /* Cambiado para que toda la imagen sea visible */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+
+.background-image:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* CÍRCULOS CON GRADIENTE */
+.gradient-circle {
+    background: linear-gradient(135deg, rgba(245, 124, 0, 0.3), rgba(255, 255, 255, 0));
+}
+
+/* CÍRCULOS CON BORDE */
+.border-circle {
+    border: 3px dashed rgba(0, 123, 255, 0.5);
+    background: transparent;
+}
+
+/* TAMAÑOS Y POSICIONES */
+.large-circle {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.medium-circle {
+    width: 150px;
+    height: 150px;
+    bottom: 20px;
+    left: 50px;
+    animation-delay: 2s;
+}
+
+.small-circle {
+    width: 100px;
+    height: 100px;
+    bottom: -30px;
+    right: 100px;
+    animation-delay: 4s;
+}
+
+/* ANIMACIÓN FLOTANTE */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* FORMULARIO */
+.form {
+    width: 40%;
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.form-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #210CC0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666666;
+}
+
+.input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    color: #333333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #ffffff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus {
+    border-color: #f57c00;
+    box-shadow: 0 0 8px rgba(245, 124, 0, 0.3);
+}
+
+.textarea {
+    min-height: 100px;
+    resize: none;
+}
+
+.button-confirm {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(135deg, #f57c00, #ff9800);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.button-confirm:hover {
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+    transform: translateY(-2px);
+}
+
+/* CRÉDITOS */
+.credits {
+    font-size: 0.8rem;
+    color: #999;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.credits a {
+    color: #f57c00;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVIDAD */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .design-elements {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .background-image {
+        width: 300px;
+        height: 300px;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .circle {
+        display: none;
+    }
+}

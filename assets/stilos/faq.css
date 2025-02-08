@@ -1,0 +1,217 @@
+.contact-section {
+    font-family: 'Roboto', sans-serif;
+    padding: 50px;
+    padding-top: 150px;
+    background: linear-gradient(to bottom, #f0f4ff, #ffffff);
+    display: flex;
+    flex-direction: column; /* Cambiado para centrar título y contenido */
+    align-items: center;
+    min-height: 80vh;
+}
+
+
+/* Estilo para la sección de Preguntas Frecuentes */
+.faqs-section {
+    position: relative;
+    background:#ffffff; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    padding: 100px 0;
+    padding-top: 150px;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Efecto de fondo */
+.background-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, transparent 40%);
+    background-size: 200px 200px;
+    opacity: 0.4;
+    pointer-events: none;
+    transition: background-size 0.3s ease-in-out;
+}
+
+.faqs-section:hover .background-effects {
+    background-size: 0 0;
+}
+
+/* Contenedor de preguntas frecuentes */
+.faqs-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo de cada elemento FAQ */
+.faq-item {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border: 3px solid #000000;
+}
+
+/* Efectos de las imágenes de iconos */
+.faq-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    position: absolute;
+    top: 10px; /* Puedes ajustar esto para mover la imagen hacia arriba o abajo */
+    right: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover .faq-icon {
+    transform: scale(1.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo del título de FAQ */
+.faq-title {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.faq-title h3 {
+    font-size: 1.6rem;
+    color: rgba(6, 78, 255, 0.5);
+    position: relative;
+    z-index: 1;
+    margin-right: 100px; /* Agrega margen derecho para evitar que el texto se superponga con el icono */
+}
+.icon-x {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+/* Línea decorativa debajo del título */
+.faq-title h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: #00f489;
+    transition: width 0.3s ease;
+}
+
+.faq-item:hover .faq-title h3::after {
+    width: 100%;
+}
+
+/* Estilo del texto de FAQ */
+.faq-item p {
+    font-size: 1.1rem;
+    color: #000000;
+    line-height: 1.6;
+    margin: 10px 0 0 0; /* Agrega margen superior para crear espacio entre el título y el texto */
+}
+
+/* Media Queries */
+
+/* Mobile Devices: up to 480px */
+@media (max-width: 480px) {
+    .faq-title h3 {
+        font-size: 1.2rem; /* Ajustar tamaño de título */
+        margin-right: 60px; /* Ajustar margen derecho */
+    }
+
+    .faq-item {
+        padding: 20px; /* Reducir padding en elementos FAQ */
+    }
+
+    .faq-item p {
+        font-size: 1rem; /* Reducir tamaño de texto en preguntas frecuentes */
+    }
+
+    .faq-icon {
+        width: 40px; /* Reducir tamaño del icono */
+        height: 40px; /* Reducir tamaño del icono */
+        top: 5px; /* Ajustar posición vertical del icono */
+        right: 5px; /* Ajustar posición horizontal del icono */
+    }
+}
+
+/* Tablets: up to 768px */
+@media (max-width: 768px) {
+    .faq-title h3 {
+        font-size: 1.4rem; /* Ajustar tamaño de título */
+        margin-right: 80px; /* Ajustar margen derecho */
+    }
+
+    .faq-item {
+        padding: 25px; /* Reducir padding en elementos FAQ */
+    }
+
+    .faq-item p {
+        font-size: 1.05rem; /* Ajustar tamaño de texto en preguntas frecuentes */
+    }
+
+    .faq-icon {
+        width: 50px; /* Reducir tamaño del icono */
+        height: 50px; /* Reducir tamaño del icono */
+        top: 8px; /* Ajustar posición vertical del icono */
+        right: 8px; /* Ajustar posición horizontal del icono */
+    }
+}
+
+/* Desktops: from 769px to 1200px */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .faq-title h3 {
+        font-size: 1.5rem; /* Ajustar tamaño de título */
+    }
+
+    .faq-item {
+        padding: 30px; /* Mantener padding en elementos FAQ */
+    }
+
+    .faq-item p {
+        font-size: 1.1rem; /* Mantener tamaño de texto en preguntas frecuentes */
+    }
+
+    .faq-icon {
+        width: 55px; /* Ajustar tamaño del icono */
+        height: 55px; /* Ajustar tamaño del icono */
+        top: 10px; /* Ajustar posición vertical del icono */
+        right: 10px; /* Ajustar posición horizontal del icono */
+    }
+}
+
+/* Large Desktops: 1201px and up */
+@media (min-width: 1201px) {
+    .faq-title h3 {
+        font-size: 1.6rem; /* Tamaño de título para pantallas grandes */
+    }
+
+    .faq-item {
+        padding: 30px; /* Mantener padding en elementos FAQ */
+    }
+
+    .faq-item p {
+        font-size: 1.1rem; /* Mantener tamaño de texto en preguntas frecuentes */
+    }
+
+    .faq-icon {
+        width: 60px; /* Ajustar tamaño del icono */
+        height: 60px; /* Ajustar tamaño del icono */
+        top: 10px; /* Mantener posición vertical del icono */
+        right: 10px; /* Mantener posición horizontal del icono */
+    }
+}
+
+
