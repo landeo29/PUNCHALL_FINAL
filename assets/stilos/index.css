@@ -452,53 +452,39 @@
 /* 📌 Responsivo para Tablets (hasta 768px) */
 @media (max-width: 768px) {
     .wave-content {
-        max-width: 90%; /* 🔥 Más ancho para aprovechar espacio */
+        max-width: 90%;
         text-align: center;
-        margin: 0 auto; /* 🔥 Centrado */
+        margin: 0 auto;
         padding: 1rem;
     }
 
     .wave-content h1 {
-        font-size: 3rem; /* 🔥 Más grande para destacar */
+        font-size: 3rem;
         margin-bottom: 0.8rem;
     }
 
     .wave-content h2 {
-        font-size: 1.8rem; /* 🔥 Un poco más grande */
+        font-size: 1.8rem;
         margin-bottom: 0.6rem;
     }
 
     .wave-content p {
-        font-size: 1rem; /* 🔥 Más legible */
+        font-size: 1rem;
         line-height: 1.6;
         margin-bottom: 1.5rem;
     }
 
     .wave-image {
         width: 100%;
-        max-height: 300px; /* 🔥 Evitar que se expanda demasiado */
-        clip-path: none;
-    }
-
-    .wave-navigation {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 1.5rem;
-    }
-
-    .nav-btn {
-        width: 14px; /* 🔥 Botones más grandes */
-        height: 14px;
+        max-height: 300px;
     }
 }
 
-/* 📌 Responsivo para Móviles (hasta 480px) */
-/* 🔥 SOLO PARA MÓVILES (max-width: 480px) */
+/* 📌 Responsivo para Móviles (hasta 650px) */
 @media (max-width: 650px) {
     .wave-container {
         display: flex !important;
-        flex-direction: column-reverse !important; /* 🔥 Imagen abajo */
+        flex-direction: column-reverse !important;
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -528,12 +514,9 @@
     }
 
     .wave-image {
-        display: none !important; /* 🔥 La imagen desaparece en móviles */
+        display: none !important;
     }
 }
-
-
-
 
 /*Fin Seccion 2*/
 
