@@ -365,7 +365,7 @@
 }
 
 .wave-content h1 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     margin-bottom: 15px;
     color: #002f5f;
     font-family: "Montserrat", sans-serif;
@@ -380,7 +380,7 @@
 }
 
 .wave-content h2 {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     margin-bottom: 20px;
     color: #00567A;
     font-family: "Roboto", sans-serif;
@@ -388,7 +388,7 @@
 }
 
 .wave-content p {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     line-height: 1.8;
     color: #555;
     font-family: "Open Sans", sans-serif;
@@ -454,62 +454,6 @@
 @media (max-width: 1024px) {
     .wave-image {
         display: none !important; /* 🔥 La imagen desaparece en 1024px o menos */
-    }
-}
-/* ✅ PARA PANTALLAS MÁS GRANDES (DESKTOPS Y MONITORES GRANDES) */
-@media (min-width: 1025px) {
-    .wave-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .wave-content {
-        max-width: 50%;
-        text-align: left;
-        padding: 2rem;
-    }
-
-    .wave-content h1 {
-        font-size: 4rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .wave-content h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .wave-content p {
-        font-size: 1.4rem;
-        line-height: 1.8;
-        margin-bottom: 2rem;
-    }
-
-    .wave-image {
-        max-width: 45%;
-        display: block !important;
-    }
-}
-
-/* ✅ PARA PANTALLAS EXTRAGRANDES (FULL HD Y 4K) */
-@media (min-width: 1440px) {
-    .wave-content h1 {
-        font-size: 4.5rem;
-    }
-
-    .wave-content h2 {
-        font-size: 3rem;
-    }
-
-    .wave-content p {
-        font-size: 1.6rem;
-    }
-
-    .wave-image {
-        max-width: 50%;
     }
 }
 
