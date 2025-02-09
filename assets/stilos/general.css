@@ -4,6 +4,10 @@ html, body {
     box-sizing: border-box;
 }
 
+body {
+    zoom: 0.8;
+}
+
 *, *::before, *::after {
     box-sizing: inherit;
 }
