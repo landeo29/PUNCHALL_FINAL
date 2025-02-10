@@ -1,3 +1,40 @@
+/* Botón flotante */
+#google_translate_container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+#google_translate_container i {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Oculta la barra fea de Google Translate */
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+.goog-te-gadget {
+    font-size: 0; /* Oculta el texto del selector */
+}
+
+/* Ocultar el marco emergente */
+body > .skiptranslate {
+    display: none !important;
+}
+
+
 /* Encapsular estilos solo dentro de .custom-slider-section */
 .custom-slider-section * {
     margin: 0;
