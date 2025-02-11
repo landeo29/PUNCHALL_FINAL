@@ -79,7 +79,8 @@ color: #9FEDF4; /* Texto celeste */
 }
 
 .cards-section .card__img {
-    width: 328px;
+    width: 590px;
+    height: 338px;
     border-radius: 1.5rem;
 }
 
