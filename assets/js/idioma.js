@@ -6,7 +6,7 @@ function googleTranslateElementInit() {
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
     }, 'google_translate_element');
 
-    // Esperar a que Google Translate cargue
+    // Esperar a que Google Translate cargue antes de conectar el selector
     waitForGoogleTranslate();
 }
 
@@ -21,12 +21,20 @@ function waitForGoogleTranslate() {
 
             // Conectar el selector de nuestra burbuja con el de Google Translate
             document.getElementById("language-select").addEventListener("change", function () {
-                let selectedLang = this.value;
-                if (selectedLang) {
-                    googleTranslateSelect.value = selectedLang;
-                    googleTranslateSelect.dispatchEvent(new Event("change"));
-                }
+                changeLanguage(this.value);
             });
         }
     }, 500); // Revisar cada 500ms hasta que Google Translate esté listo
+}
+
+// Función para cambiar de idioma sin errores
+function changeLanguage(lang) {
+    let googleTranslateSelect = document.querySelector(".goog-te-combo");
+
+    if (googleTranslateSelect) {
+        googleTranslateSelect.value = lang;
+        googleTranslateSelect.dispatchEvent(new Event("change"));
+    } else {
+        alert("Error: Google Translate no está cargado. Espera unos segundos e inténtalo de nuevo.");
+    }
 }
