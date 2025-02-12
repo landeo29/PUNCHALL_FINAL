@@ -47,6 +47,8 @@
 </header>
 
 <!-------Seccion 1----------->
+
+
 <div class="custom-slider-section">
   <section>
     <ul class='slider'>
@@ -216,6 +218,16 @@
 
 <!-----------Fin Seccion 6------------->
 
+<a href="#" onclick="translatePage('en')">Inglés</a>
+<a href="#" onclick="translatePage('fr')">Francés</a>
+<a href="#" onclick="translatePage('de')">Alemán</a>
+
+<script>
+  function translatePage(lang) {
+    var url = "https://translate.google.com/translate?hl=" + lang + "&sl=auto&u=" + encodeURIComponent(window.location.href);
+    window.location.href = url;
+  }
+</script>
 
 
 <!----FOOTER------>
