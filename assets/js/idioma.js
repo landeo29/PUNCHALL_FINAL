@@ -6,23 +6,25 @@ function googleTranslateElementInit() {
     }, 'google_translate_element');
 }
 
-// Función para cambiar idioma sin errores
+// Esperar a que Google Translate cargue antes de cambiar idioma
 function changeLanguage(lang) {
     if (lang === "") return;
 
-    var frame = document.querySelector(".goog-te-menu-frame");
-    if (!frame) {
-        alert("Error: Google Translate no está cargado. Recarga la página y prueba de nuevo.");
-        return;
-    }
+    // Esperar a que Google Translate cargue completamente
+    let interval = setInterval(() => {
+        let frame = document.querySelector(".goog-te-menu-frame");
+        if (frame) {
+            clearInterval(interval); // Detener la espera
 
-    var frameDocument = frame.contentDocument || frame.contentWindow.document;
-    var langOptions = frameDocument.querySelectorAll(".goog-te-menu2-item span.text");
+            let frameDocument = frame.contentDocument || frame.contentWindow.document;
+            let langOptions = frameDocument.querySelectorAll(".goog-te-menu2-item span.text");
 
-    for (var i = 0; i < langOptions.length; i++) {
-        if (langOptions[i].innerText.toLowerCase().includes(lang)) {
-            langOptions[i].click();
-            break;
+            for (let i = 0; i < langOptions.length; i++) {
+                if (langOptions[i].innerText.toLowerCase().includes(lang)) {
+                    langOptions[i].click();
+                    break;
+                }
+            }
         }
-    }
+    }, 500); // Revisa cada 500ms hasta que Google Translate esté listo
 }

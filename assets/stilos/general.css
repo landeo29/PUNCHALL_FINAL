@@ -41,4 +41,7 @@ body {
     display: none !important;
 }
 
-
+/* Oculta la marca de Google Translate */
+.goog-logo-link, .goog-te-gadget span {
+    display: none !important;
+}
