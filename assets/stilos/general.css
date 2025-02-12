@@ -11,25 +11,3 @@ body {
 *, *::before, *::after {
     box-sizing: inherit;
 }
-#translate-bubble {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: white;
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    font-family: Arial, sans-serif;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-}
-
-#language-select {
-    border: none;
-    font-size: 16px;
-    padding: 5px;
-    cursor: pointer;
-    background: transparent;
-    outline: none;
-}
