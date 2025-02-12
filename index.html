@@ -46,6 +46,18 @@
   </nav>
 </header>
 
+<div id="translate-bubble">
+  <select id="language-select" onchange="changeLanguage(this.value)">
+    <option value="">🌍 Selecciona idioma</option>
+    <option value="es">🇪🇸 Español</option>
+    <option value="en">🇬🇧 Inglés</option>
+    <option value="fr">🇫🇷 Francés</option>
+    <option value="de">🇩🇪 Alemán</option>
+    <option value="pt">🇵🇹 Portugués</option>
+    <option value="it">🇮🇹 Italiano</option>
+  </select>
+</div>
+
 <!-------Seccion 1----------->
 
 
@@ -218,18 +230,6 @@
 
 <!-----------Fin Seccion 6------------->
 
-<a href="#" onclick="translatePage('en')">Inglés</a>
-<a href="#" onclick="translatePage('fr')">Francés</a>
-<a href="#" onclick="translatePage('de')">Alemán</a>
-
-<script>
-  function translatePage(lang) {
-    var url = "https://translate.google.com/translate?hl=" + lang + "&sl=auto&u=" + encodeURIComponent(window.location.href);
-    window.location.href = url;
-  }
-</script>
-
-
 <!----FOOTER------>
 <footer class="footer__container">
   <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #a4d0f9;"></path></svg></div>
@@ -288,6 +288,7 @@
 
 <script src="assets/js/nav.js"></script>
 <script src="assets/js/index.js"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="assets/js/idioma.js"></script>
 </html>
 

@@ -11,3 +11,24 @@ body {
 *, *::before, *::after {
     box-sizing: inherit;
 }
+/* Estilos para la burbuja flotante */
+#translate-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    z-index: 9999;
+}
+
+/* Estilo para el selector de idiomas */
+#language-select {
+    border: none;
+    font-size: 16px;
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+}
