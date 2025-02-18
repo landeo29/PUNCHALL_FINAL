@@ -1,31 +1,51 @@
-const API_KEY = "tu_clave_aqui";  // Usa la clave de tu cuenta
-const REGION = "eastus";  // Región correcta
-const ENDPOINT = `https://${REGION}.api.cognitive.microsofttranslator.com/translate?api-version=3.0`;
+// Variables necesarias para la API
+const subscriptionKey = '1IVg8v5quDCcmX0dHM8Jt1QobO704vGz7338U6qkPMQTivYYpv0JJQQJ99BBACYeBjFXJ3w3AAAbACOGNnVs'; // Clave 1
+const region = 'eastus'; // Región
+const endpoint = 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0'; // Endpoint de traducción
 
+// Función para traducir el texto
+async function translateText(text, targetLanguage) {
+    const url = `${endpoint}&to=${targetLanguage}`;
 
-async function translatePage(lang) {
-    let elements = document.querySelectorAll(".translate");
+    const headers = {
+        'Ocp-Apim-Subscription-Key': subscriptionKey,
+        'Content-Type': 'application/json',
+        'Ocp-Apim-Subscription-Region': region
+    };
 
-    for (let element of elements) {
-        let text = element.innerText;
-        let translatedText = await translateText(text, lang);
-        element.innerText = translatedText;
+    const body = JSON.stringify([{ Text: text }]);
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: headers,
+            body: body
+        });
+
+        const data = await response.json();
+        return data[0].translations[0].text; // Devuelve el texto traducido
+    } catch (error) {
+        console.error('Error de traducción:', error);
+        return null;
     }
 }
 
-async function translateText(text, targetLang) {
-    let url = `${ENDPOINT}&to=${targetLang}`;
-
-    let response = await fetch(url, {
-        method: "POST",
-        headers: {
-            "Ocp-Apim-Subscription-Key": API_KEY,
-            "Content-Type": "application/json",
-            "Ocp-Apim-Subscription-Region": "global"
-        },
-        body: JSON.stringify([{ text: text }])
-    });
-
-    let data = await response.json();
-    return data[0].translations[0].text;
+// Función para traducir toda la página
+async function translatePage(language) {
+    const elementsToTranslate = document.querySelectorAll('.translate'); // Selecciona los elementos que necesitan traducción
+    for (const element of elementsToTranslate) {
+        const text = element.innerText || element.textContent;
+        if (text) {
+            const translatedText = await translateText(text, language);
+            if (translatedText) {
+                element.innerText = translatedText; // Reemplaza el texto con la traducción
+            }
+        }
+    }
 }
+
+// Evento para manejar el cambio de idioma
+document.getElementById('language-select').addEventListener('change', function() {
+    const selectedLanguage = this.value;
+    translatePage(selectedLanguage);
+});
