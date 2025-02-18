@@ -32,7 +32,7 @@ async function translateText(text, targetLanguage) {
 
 // Función para traducir toda la página
 async function translatePage(language) {
-    const elementsToTranslate = document.querySelectorAll('.translate'); // Selecciona los elementos que necesitan traducción
+    const elementsToTranslate = document.querySelectorAll('[data-translate]'); // Selecciona los elementos con atributo data-translate
     for (const element of elementsToTranslate) {
         const text = element.innerText || element.textContent;
         if (text) {
