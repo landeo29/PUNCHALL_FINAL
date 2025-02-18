@@ -1,6 +1,7 @@
-// 🔥 REEMPLAZA ESTO CON TU CLAVE DE API Y ENDPOINT DE AZURE TRANSLATOR
-const API_KEY = "1IVg8v5quDCcmX0dHM8Jt1QobO704vGz7338U6qkPMQTivYYpv0JJQQJ99BBACYeBjFXJ3w3AAAbACOGNnVs";
-const ENDPOINT = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0";
+const API_KEY = "tu_clave_aqui";  // Usa la clave de tu cuenta
+const REGION = "eastus";  // Región correcta
+const ENDPOINT = `https://${REGION}.api.cognitive.microsofttranslator.com/translate?api-version=3.0`;
+
 
 async function translatePage(lang) {
     let elements = document.querySelectorAll(".translate");
