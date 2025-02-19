@@ -29,13 +29,13 @@
 
     <!-- Menú de navegación -->
     <ul class="nav-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
-      <li><a href="Servicios.html">Soluciones</a></li>
-      <li><a href="ResponsabilidadSocial.html">Responsabilidad Social</a></li>
-      <li><a href="OportunidaddeColaboración.html">Oportunidad de Colaboración</a></li>
+      <li><a href="index.html" data-translate>Inicio</a></li>
+      <li><a href="SobreNosotros.html" data-translate>Sobre Nosotros</a></li>
+      <li><a href="Servicios.html" data-translate>Soluciones</a></li>
+      <li><a href="ResponsabilidadSocial.html" data-translate>Responsabilidad Social</a></li>
+      <li><a href="OportunidaddeColaboración.html" data-translate>Oportunidad de Colaboración</a></li>
       <li>
-        <a href="Contacto.html" class="contact-link">
+        <a href="Contacto.html" class="contact-link" data-translate>
           Contáctanos <i class="icon-arrow">&#10132;</i>
         </a>
       </li>
@@ -61,17 +61,17 @@
 
   <!-- Formulario -->
   <form class="form" id="contact-form">
-    <h1 class="form-title">Contactanos</h1>
-    <label for="name">Nombre</label>
-    <input type="text" class="input" id="name" name="user_name" placeholder="Ingresa tu nombre" required>
+    <h1 class="form-title" data-translate>Contáctanos</h1>
+    <label for="name" data-translate>Nombre</label>
+    <input type="text" class="input" id="name" name="user_name" placeholder="Ingresa tu nombre" data-translate="form.placeholderNombre" required>
 
-    <label for="email">Correo Electrónico</label>
-    <input type="email" class="input" id="email" name="user_email" placeholder="Ingresa tu correo" required>
+    <label for="email" data-translate="form.email">Correo Electrónico</label>
+    <input type="email" class="input" id="email" name="user_email" placeholder="Ingresa tu correo" data-translate="form.placeholderEmail" required>
 
-    <label for="message">Mensaje</label>
-    <textarea class="input textarea" id="message" name="message" placeholder="Escribe tu mensaje" required></textarea>
+    <label for="message" data-translate="form.mensaje">Mensaje</label>
+    <textarea class="input textarea" id="message" name="message" placeholder="Escribe tu mensaje" data-translate="form.placeholderMensaje" required></textarea>
 
-    <button type="submit" class="button-confirm">ENVIAR</button>
+    <button type="submit" class="button-confirm" data-translate="form.enviar">ENVIAR</button>
   </form>
 </section>
 
@@ -82,36 +82,34 @@
   <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #ffffff;"></path></svg></div>
   <div class="footer__content">
     <div class="footer__logo">
-      <a href="index.html"><img src="assets/img/logos/foot.webp" alt="Punchay Logo">
-      </a>
+      <a href="index.html"><img src="assets/img/logos/foot.webp" alt="Punchay Logo"></a>
       <p class="textfoot">info@punchay.dev</p>
       <p class="txtfoot">+51-934082901</p>
     </div>
     <div class="footer__links">
-      <h4>Enlaces Rápidos</h4>
+      <h4 data-translate="footer.enlacesRapidos">Enlaces Rápidos</h4>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
-        <li><a href="Servicios.html">Soluciones</a></li>
-        <li><a href="ResponsabilidadSocial.html">Responsabilidad Social</a></li>
-        <li><a href="Faqs.html">FAQ</a></li>
+        <li><a href="index.html" data-translate="nav.inicio">Inicio</a></li>
+        <li><a href="SobreNosotros.html" data-translate="nav.sobreNosotros">Sobre Nosotros</a></li>
+        <li><a href="Servicios.html" data-translate="nav.soluciones">Soluciones</a></li>
+        <li><a href="ResponsabilidadSocial.html" data-translate="nav.responsabilidadSocial">Responsabilidad Social</a></li>
+        <li><a href="Faqs.html" data-translate="nav.faq">FAQ</a></li>
       </ul>
     </div>
     <div class="footer__services">
-      <h4>Donaciones y Apoyo</h4>
+      <h4 data-translate="footer.donacionesApoyo">Donaciones y Apoyo</h4>
       <ul>
-        <li><a href="OportunidaddeColaboración.html">Oportunidad de Colaboracion</a></li>
-        <li><a href="https://www.paypal.com/donate?hosted_button_id=4XLEY7KZ55W9N">Donaciones Unicas</a></li>
-        <li><a href="https://www.paypal.com/donate?hosted_button_id=4XLEY7KZ55W9N">Donaciones Recurrentes</a></li>
-        <li><a href="Contacto.html">Contactanos</a></li>
-
+        <li><a href="OportunidaddeColaboración.html" data-translate="nav.oportunidadColaboracion">Oportunidad de Colaboración</a></li>
+        <li><a href="https://www.paypal.com/donate?hosted_button_id=4XLEY7KZ55W9N" data-translate="footer.donacionesUnicas">Donaciones Únicas</a></li>
+        <li><a href="https://www.paypal.com/donate?hosted_button_id=4XLEY7KZ55W9N" data-translate="footer.donacionesRecurrentes">Donaciones Recurrentes</a></li>
+        <li><a href="Contacto.html" data-translate="nav.contactanos">Contáctanos</a></li>
       </ul>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <div class="footer__social">
-      <h4>Síguenos</h4>
+      <h4 data-translate="footer.siguenos">Síguenos</h4>
       <div class="social__icons">
         <a href="https://www.facebook.com/profile.php?id=61572802040926"><i class="fab fa-facebook-f"></i></a>
         <a href="https://x.com/PUNCHAY2025"><i class="fab fa-twitter"></i></a>
@@ -126,13 +124,15 @@
 
   </div>
   <div class="footer__bottom">
-    <p>&copy; 2024 Punchay. Todos los derechos reservados.</p>
+    <p data-translate="footer.derechos">&copy; 2024 Punchay. Todos los derechos reservados.</p>
   </div>
 </footer>
 <!----FIN FOOTER------>
 
+
 </body>
 <script src="assets/js/nav.js"></script>
 <script src="assets/js/contacto.js"></script>
+<script src="assets/js/idiomas.js"></script>
 
 </html>

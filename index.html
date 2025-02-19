@@ -16,276 +16,221 @@
 
 <body>
 
-<div class="translate">
-  <header>
+<header>
+  <nav class="navbar">
+    <a href="#inicio" class="logo-container">
+      <img src="assets/img/logos/nav.webp" alt="Logo Punchay" class="logo">
+    </a>
 
-    <nav class="navbar">
-      <!-- Logo -->
-      <a href="#inicio" class="logo-container">
-        <img src="assets/img/logos/nav.webp" alt="Logo Punchay" class="logo">
-      </a>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      &#9776;
+    </button>
 
-      <!-- Botón menú hamburguesa -->
-      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
-        &#9776; <!-- Ícono de hamburguesa -->
-      </button>
-
-      <!-- Menú de navegación -->
-      <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
-        <li><a href="Servicios.html">Soluciones</a></li>
-        <li><a href="ResponsabilidadSocial.html">Responsabilidad Social</a></li>
-        <li><a href="OportunidaddeColaboración.html">Oportunidad de Colaboración</a></li>
-        <li>
-          <a href="Contacto.html" class="contact-link">
-            Contáctanos <i class="icon-arrow">&#10132;</i>
-          </a>
-        </li>
-      </ul>
-
-    </nav>
-  </header>
-
-
-  <!-------Seccion 1----------->
-
-
-  <div class="custom-slider-section">
-    <section>
-      <ul class='slider'>
-        <li class='item' style="background-image: url('assets/img/index/silder1.webp')">
-          <div class='content'>
-            <h2 class='title'>Innovación Tecnológica</h2>
-            <p class='description'> Tu apoyo puede marcar la diferencia. Con tu donación, ayudamos a construir espacios inclusivos y accesibles para trabajadores con discapacidad. ¡Dona ahora y sé parte del cambio!" </p>
-            <button><a href="OportunidaddeColaboración.html" class="linkindex">Se parte de cambio</a></button>
-          </div>
-        </li>
-        <li class='item' style="background-image: url('assets/img/index/slider2 (1).webp')">
-          <div class='content'>
-            <h2 class='title'>Experiencia Digital</h2>
-            <p class='description'> El futuro es ahora. Transforma tu empresa con nuestras soluciones tecnológicas personalizadas. ¡Contrata nuestros servicios y marca la diferencia hoy mismo!" </p>
-            <button><a href="Contacto.html" class="linkindex">Contactanos Ahora</a></button>
-          </div>
-        </li>
-        <li class='item' style="background-image: url('assets/img/index/slider3.webp')">
-          <div class='content'>
-            <h2 class='title'>El Futuro es Ahora</h2>
-            <p class='description'> Explora nuestro sitio y descubre cómo transformamos la tecnología, creando un entorno inclusivo y accesible para todos. Únete a nuestra misión de marcar la diferencia. </p>
-            <button><a href="SobreNosotros.html" class="linkindex">Conoce mas</a></button>
-          </div>
-        </li>
-
-      </ul>
-      <nav class='nav'>
-        <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
-        <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
-      </nav>
-    </section>
-  </div>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <!------Fin Seccion 1------------>
-
-  <!-----Seccion 2-------->
-  <section class="wave-slider">
-    <!-- Slide 1 -->
-    <div class="wave-slide active" aria-hidden="false">
-      <div class="wave-content">
-        <h1>Construyendo Oportunidades</h1>
-        <h2>Innovación y Accesibilidad</h2>
-        <p>
-          En Punchay, estamos dedicados a construir un futuro donde la tecnología no solo sea innovadora, sino también accesible para todos.
-          Somos un equipo apasionado de ingenieros que cree en el poder transformador de la inclusión. Nuestro enfoque se basa en proporcionar soluciones tecnológicas
-          de alta calidad, desde el desarrollo de software hasta la creación de aplicaciones móviles y páginas web, todo mientras promovemos un entorno de trabajo inclusivo.
-        </p>
-      </div>
-      <div class="wave-image">
-        <img src="assets/img/index/slid1.webp" alt="Personas colaborando con tecnología accesible" />
-      </div>
-    </div>
-
-    <!-- Slide 2 -->
-    <div class="wave-slide" aria-hidden="true">
-      <div class="wave-content">
-        <h1>Inclusión y Calidad</h1>
-        <h2>Marcando la Diferencia</h2>
-        <p>
-          En Punchay, no solo desarrollamos tecnología; construimos oportunidades. Nos enorgullece contratar a personas con diversas capacidades, quienes aportan habilidades únicas
-          y perspectivas valiosas que enriquecen nuestro trabajo. Cada proyecto que emprendemos está diseñado para no solo cumplir con las expectativas de nuestros clientes,
-          sino para superar los estándares de accesibilidad y calidad.
-        </p>
-      </div>
-      <div class="wave-image">
-        <img src="assets/img/index/slid2.webp" alt="Tecnología accesible e inclusiva en acción" />
-      </div>
-    </div>
-
-    <!-- Botones de Navegación -->
-    <div class="wave-navigation" role="tablist" aria-label="Controles del slider">
-      <button class="nav-btn active" data-index="0" aria-selected="true" aria-controls="slide-1" tabindex="0"></button>
-      <button class="nav-btn" data-index="1" aria-selected="false" aria-controls="slide-2" tabindex="-1"></button>
-    </div>
-  </section>
-  <!-----Fin Seccion 2-------->
-
-  <!-------Seccion 3 ---------->
-  <div class="cards__container">
-    <!-- Tarjeta de Misión -->
-    <div class="card">
-      <div class="card__icon">
-        <img src="assets/img/index/mision.webp" alt="Misión">
-      </div>
-      <div class="card__content">
-        <h3 class="card__title">Misión</h3>
-        <p class="card__text">Desarrollar soluciones tecnológicas de calidad, fiabilidad e innovación, promoviendo un entorno de inclusión y diversidad para marcar la diferencia en el mercado global.</p>
-      </div>
-    </div>
-
-    <!-- Tarjeta de Visión -->
-    <div class="card">
-      <div class="card__icon">
-        <img src="assets/img/index/vision.webp" alt="Visión">
-      </div>
-      <div class="card__content">
-        <h3 class="card__title">Visión</h3>
-        <p class="card__text">Convertirnos en un referente mundial en soluciones tecnológicas, impulsados por la diversidad y la innovación para transformar positivamente la vida de las personas.</p>
-      </div>
-    </div>
-  </div>
-  <!-------Fin Seccion 3----------->
-
-  <!----Seccion 4------>
-
-  <section class="testimonial-section">
-    <div class="testimonial-container">
-      <img src="assets/img/index/testimonial.webp" alt="Fondo testimonial" class="testimonial-image">
-      <div class="overlay"></div>
-      <div class="testimonial-content">
-        <p class="testimonial-text">
-          En PUNCHAY creemos que la tecnología no solo conecta, también transforma. Nuestra misión es abrir caminos hacia un futuro más inclusivo, donde cada solución tecnológica sea una oportunidad para crecer y marcar la diferencia. ¡Estamos construyendo innovación con propósito!
-        </p>
-        <p class="testimonial-author">
-          <strong>Ivan Borjas</strong><br>
-          CEO de PUNCHAY
-        </p>
-      </div>
-    </div>
-  </section>
-  <!----Fin Seccion 4------>
-
-  <!---------Seccion 5------------->
-  <section class="three-d-section">
-    <h2 class="section-title">💻 Stack Tecnológico</h2>
-    <div class="three-d-grid">
-      <!-- Fila Superior: 7 Polígonos -->
-      <div class="row row-top">
-        <div class="polygon-container"><div class="polygon"><img src="./assets/img/index/figma.webp" alt="HTML5"></div></div>
-        <div class="polygon-container"><div class="polygon"><img src="./assets/img/index/css.webp" alt="CSS3"></div></div>
-        <div class="polygon-container"><div class="polygon"><img src="./assets/img/index/html.webp" alt="JavaScript"></div></div>
-        <div class="polygon-container"><div class="polygon"><img src="./assets/img/index/js.webp" alt="TypeScript"></div></div>
-        <div class="polygon-container"><div class="polygon"><img src="./assets/img/index/mysql.webp" alt="React"></div></div>
-        <div class="polygon-container"><div class="polygon"><img src="./assets/img/index/php.webp" alt="Tailwind CSS"></div></div>
-        <div class="polygon-container"><div class="polygon"><img src="./assets/img/index/python.webp" alt="Docker"></div></div>
-      </div>
-
-      <!-- Fila Inferior: 6 Polígonos -->
-      <div class="row row-bottom">
-        <div class="polygon-container"><div class="polygon"><img src="assets/img/index/java%20(1).webp" alt="Node.js"></div></div>
-        <div class="polygon-container"><div class="polygon"><img src="assets/img/index/rubi.webp" alt="MongoDB"></div></div>
-        <div class="polygon-container"><div class="polygon"><img src="assets/img/index/android.webp" alt="Git"></div></div>
-        <div class="polygon-container"><div class="polygon"><img src="assets/img/index/swift.webp" alt="Figma"></div></div>
-        <div class="polygon-container"><div class="polygon"><img src="assets/img/index/C%23.webp" alt="GraphQL"></div></div>
-        <div class="polygon-container"><div class="polygon"><img src="assets/img/index/c.webp" alt="VS Code"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!---------Fin Seccion 5------------->
-
-  <!-----------Seccion 6------------->
-  <section class="cta-section-unique">
-    <div class="cta-container-unique">
-      <h1 class="cta-title-unique">💻 Transforma tu Futuro con Soluciones  <span>PUNCHAY</span></h1>
-      <p class="cta-description-unique">
-        En Punchay creemos en un mundo más inclusivo. Déjanos ayudarte a desarrollar tu próximo proyecto tecnológico !
-      </p>
-      <div class="cta-buttons-unique">
-        <a href="Contacto.html" class="cta-button-unique primary-button-unique">Contactanos Ahora</a>
-        <a href="Servicios.html" class="cta-button-unique secondary-button-unique">Conoce Nuestras Soluciones →</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-----------Fin Seccion 6------------->
-
-  <!----FOOTER------>
-  <footer class="footer__container">
-    <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #a4d0f9;"></path></svg></div>
-    <div class="footer__content">
-      <div class="footer__logo">
-        <a href="index.html"><img src="assets/img/logos/foot.webp" alt="Punchay Logo">
+    <ul class="nav-links">
+      <li><a href="#inicio" data-translate>Inicio</a></li>
+      <li><a href="SobreNosotros.html" data-translate>Sobre Nosotros</a></li>
+      <li><a href="Servicios.html" data-translate>Soluciones</a></li>
+      <li><a href="ResponsabilidadSocial.html" data-translate>Responsabilidad Social</a></li>
+      <li><a href="OportunidaddeColaboración.html" data-translate>Oportunidad de Colaboración</a></li>
+      <li>
+        <a href="Contacto.html" class="contact-link">
+          <span data-translate>Contáctanos</span> <i class="icon-arrow">&#10132;</i>
         </a>
-        <p class="textfoot">info@punchay.dev</p>
-        <p class="txtfoot">+51-934082901</p>
-      </div>
-      <div class="footer__links">
-        <h4>Enlaces Rápidos</h4>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
-          <li><a href="Servicios.html">Soluciones</a></li>
-          <li><a href="ResponsabilidadSocial.html">Responsabilidad Social</a></li>
-          <li><a href="Faqs.html">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer__services">
-        <h4>Donaciones y Apoyo</h4>
-        <ul>
-          <li><a href="OportunidaddeColaboración.html">Oportunidad de Colaboracion</a></li>
-          <li><a href="https://www.paypal.com/donate?hosted_button_id=4XLEY7KZ55W9N">Donaciones Unicas</a></li>
-          <li><a href="https://www.paypal.com/donate?hosted_button_id=4XLEY7KZ55W9N">Donaciones Recurrentes</a></li>
-          <li><a href="Contacto.html">Contactanos</a></li>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-        </ul>
-      </div>
-
-      <div class="footer__social">
-        <h4>Síguenos</h4>
-        <div class="social__icons">
-          <a href="https://www.facebook.com/profile.php?id=61572802040926"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://x.com/PUNCHAY2025"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/punchay-s-a-c-b49723349/"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.instagram.com/punchaygroup/"><i class="fab fa-instagram"></i></a>
-
-          <a href="https://tiktok.com/@punchay3"><i class="fab fa-tiktok"></i></a>
-
-          <a href="https://wa.me/51934082901" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-          </a>
+<div class="custom-slider-section">
+  <section>
+    <ul class='slider'>
+      <li class='item' style="background-image: url('assets/img/index/silder1.webp')">
+        <div class='content'>
+          <h2 class='title' data-translate>Innovación Tecnológica</h2>
+          <p class='description' data-translate>Tu apoyo puede marcar la diferencia. Con tu donación, ayudamos a construir espacios inclusivos y accesibles para trabajadores con discapacidad. ¡Dona ahora y sé parte del cambio!</p>
+          <button><a href="OportunidaddeColaboración.html" class="linkindex" data-translate>Se parte de cambio</a></button>
         </div>
+      </li>
+      <li class='item' style="background-image: url('assets/img/index/slider2 (1).webp')">
+        <div class='content'>
+          <h2 class='title' data-translate>Experiencia Digital</h2>
+          <p class='description' data-translate>El futuro es ahora. Transforma tu empresa con nuestras soluciones tecnológicas personalizadas. ¡Contrata nuestros servicios y marca la diferencia hoy mismo!</p>
+          <button><a href="Contacto.html" class="linkindex" data-translate>Contactanos Ahora</a></button>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('assets/img/index/slider3.webp')">
+        <div class='content'>
+          <h2 class='title' data-translate>El Futuro es Ahora</h2>
+          <p class='description' data-translate>Explora nuestro sitio y descubre cómo transformamos la tecnología, creando un entorno inclusivo y accesible para todos. Únete a nuestra misión de marcar la diferencia.</p>
+          <button><a href="SobreNosotros.html" class="linkindex" data-translate>Conoce mas</a></button>
+        </div>
+      </li>
+    </ul>
+  </section>
+</div>
+
+<section class="wave-slider">
+  <div class="wave-slide active" aria-hidden="false">
+    <div class="wave-content">
+      <h1 data-translate>Construyendo Oportunidades</h1>
+      <h2 data-translate>Innovación y Accesibilidad</h2>
+      <p data-translate>
+        En Punchay, estamos dedicados a construir un futuro donde la tecnología no solo sea innovadora, sino también accesible para todos.
+        Somos un equipo apasionado de ingenieros que cree en el poder transformador de la inclusión. Nuestro enfoque se basa en proporcionar soluciones tecnológicas
+        de alta calidad, desde el desarrollo de software hasta la creación de aplicaciones móviles y páginas web, todo mientras promovemos un entorno de trabajo inclusivo.
+      </p>
+    </div>
+    <div class="wave-image">
+      <img src="assets/img/index/slid1.webp" alt="Personas colaborando con tecnología accesible" />
+    </div>
+  </div>
+
+  <div class="wave-slide" aria-hidden="true">
+    <div class="wave-content">
+      <h1 data-translate>Inclusión y Calidad</h1>
+      <h2 data-translate>Marcando la Diferencia</h2>
+      <p data-translate>
+        En Punchay, no solo desarrollamos tecnología; construimos oportunidades. Nos enorgullece contratar a personas con diversas capacidades, quienes aportan habilidades únicas
+        y perspectivas valiosas que enriquecen nuestro trabajo. Cada proyecto que emprendemos está diseñado para no solo cumplir con las expectativas de nuestros clientes,
+        sino para superar los estándares de accesibilidad y calidad.
+      </p>
+    </div>
+    <div class="wave-image">
+      <img src="assets/img/index/slid2.webp" alt="Tecnología accesible e inclusiva en acción" />
+    </div>
+  </div>
+
+  <div class="wave-navigation" role="tablist" aria-label="Controles del slider">
+    <button class="nav-btn active" data-index="0" aria-selected="true" aria-controls="slide-1" tabindex="0"></button>
+    <button class="nav-btn" data-index="1" aria-selected="false" aria-controls="slide-2" tabindex="-1"></button>
+  </div>
+</section>
+
+<div class="cards__container">
+  <div class="card">
+    <div class="card__icon">
+      <img src="assets/img/index/mision.webp" alt="Misión">
+    </div>
+    <div class="card__content">
+      <h3 class="card__title" data-translate>Misión</h3>
+      <p class="card__text" data-translate>Desarrollar soluciones tecnológicas de calidad, fiabilidad e innovación, promoviendo un entorno de inclusión y diversidad para marcar la diferencia en el mercado global.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__icon">
+      <img src="assets/img/index/vision.webp" alt="Visión">
+    </div>
+    <div class="card__content">
+      <h3 class="card__title" data-translate>Visión</h3>
+      <p class="card__text" data-translate>Convertirnos en un referente mundial en soluciones tecnológicas, impulsados por la diversidad y la innovación para transformar positivamente la vida de las personas.</p>
+    </div>
+  </div>
+</div>
+
+<section class="testimonial-section">
+  <div class="testimonial-container">
+    <img src="assets/img/index/testimonial.webp" alt="Fondo testimonial" class="testimonial-image">
+    <div class="overlay"></div>
+    <div class="testimonial-content">
+      <p class="testimonial-text" data-translate>
+        En PUNCHAY creemos que la tecnología no solo conecta, también transforma. Nuestra misión es abrir caminos hacia un futuro más inclusivo, donde cada solución tecnológica sea una oportunidad para crecer y marcar la diferencia. ¡Estamos construyendo innovación con propósito!
+      </p>
+      <p class="testimonial-author">
+        <strong>Ivan Borjas</strong><br>
+        <span data-translate>CEO de PUNCHAY</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="three-d-section">
+  <h2 class="section-title" data-translate>💻 Stack Tecnológico</h2>
+  <div class="three-d-grid">
+    <div class="row row-top">
+      <!-- Las imágenes y sus alt no necesitan traducción -->
+      <div class="polygon-container"><div class="polygon"><img src="./assets/img/index/figma.webp" alt="HTML5"></div></div>
+      <div class="polygon-container"><div class="polygon"><img src="./assets/img/index/css.webp" alt="CSS3"></div></div>
+      <div class="polygon-container"><div class="polygon"><img src="./assets/img/index/html.webp" alt="JavaScript"></div></div>
+      <div class="polygon-container"><div class="polygon"><img src="./assets/img/index/js.webp" alt="TypeScript"></div></div>
+      <div class="polygon-container"><div class="polygon"><img src="./assets/img/index/mysql.webp" alt="React"></div></div>
+      <div class="polygon-container"><div class="polygon"><img src="./assets/img/index/php.webp" alt="Tailwind CSS"></div></div>
+      <div class="polygon-container"><div class="polygon"><img src="./assets/img/index/python.webp" alt="Docker"></div></div>
+    </div>
+    <div class="row row-bottom">
+      <div class="polygon-container"><div class="polygon"><img src="assets/img/index/java%20(1).webp" alt="Node.js"></div></div>
+      <div class="polygon-container"><div class="polygon"><img src="assets/img/index/rubi.webp" alt="MongoDB"></div></div>
+      <div class="polygon-container"><div class="polygon"><img src="assets/img/index/android.webp" alt="Git"></div></div>
+      <div class="polygon-container"><div class="polygon"><img src="assets/img/index/swift.webp" alt="Figma"></div></div>
+      <div class="polygon-container"><div class="polygon"><img src="assets/img/index/C%23.webp" alt="GraphQL"></div></div>
+      <div class="polygon-container"><div class="polygon"><img src="assets/img/index/c.webp" alt="VS Code"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section-unique">
+  <div class="cta-container-unique">
+    <h1 class="cta-title-unique" data-translate>💻 Transforma tu Futuro con Soluciones <span>PUNCHAY</span></h1>
+    <p class="cta-description-unique" data-translate>
+      En Punchay creemos en un mundo más inclusivo. Déjanos ayudarte a desarrollar tu próximo proyecto tecnológico!
+    </p>
+    <div class="cta-buttons-unique">
+      <a href="Contacto.html" class="cta-button-unique primary-button-unique" data-translate>Contactanos Ahora</a>
+      <a href="Servicios.html" class="cta-button-unique secondary-button-unique" data-translate>Conoce Nuestras Soluciones →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer__container">
+  <div style="height: 150px; overflow: hidden;">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+      <path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #a4d0f9;"></path>
+    </svg>
+  </div>
+  <div class="footer__content">
+    <div class="footer__logo">
+      <a href="index.html"><img src="assets/img/logos/foot.webp" alt="Punchay Logo"></a>
+      <p class="textfoot">info@punchay.dev</p>
+      <p class="txtfoot">+51-934082901</p>
+    </div>
+    <div class="footer__links">
+      <h4 data-translate>Enlaces Rápidos</h4>
+      <ul>
+        <li><a href="index.html" data-translate>Inicio</a></li>
+        <li><a href="SobreNosotros.html" data-translate>Sobre Nosotros</a></li>
+        <li><a href="Servicios.html" data-translate>Soluciones</a></li>
+        <li><a href="ResponsabilidadSocial.html" data-translate>Responsabilidad Social</a></li>
+        <li><a href="Faqs.html" data-translate>FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer__services">
+      <h4 data-translate>Donaciones y Apoyo</h4>
+      <ul>
+        <li><a href="OportunidaddeColaboración.html" data-translate>Oportunidad de Colaboracion</a></li>
+        <li><a href="https://www.paypal.com/donate?hosted_button_id=4XLEY7KZ55W9N" data-translate>Donaciones Unicas</a></li>
+        <li><a href="https://www.paypal.com/donate?hosted_button_id=4XLEY7KZ55W9N" data-translate>Donaciones Recurrentes</a></li>
+        <li><a href="Contacto.html" data-translate>Contactanos</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__social">
+      <h4 data-translate>Síguenos</h4>
+      <div class="social__icons">
+        <a href="https://www.facebook.com/profile.php?id=61572802040926"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/PUNCHAY2025"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/punchay-s-a-c-b49723349/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/punchaygroup/"><i class="fab fa-instagram"></i></a>
+        <a href="https://tiktok.com/@punchay3"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/51934082901" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
-
     </div>
-    <div class="footer__bottom">
-      <p>&copy; 2024 Punchay. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+  </div>
+  <div class="footer__bottom">
+    <p data-translate>&copy; 2024 Punchay. Todos los derechos reservados.
+    </p>
+  </div>
+</footer>
   <!----FIN FOOTER------>
-</div>
-<!-- Selector de idiomas flotante -->
-<div id="translate-bubble">
-  <select id="language-select" onchange="translatePage(this.value)">
-    <option value="es">🇪🇸 Español</option>
-    <option value="en">🇬🇧 Inglés</option>
-    <option value="fr">🇫🇷 Francés</option>
-    <option value="de">🇩🇪 Alemán</option>
-    <option value="pt">🇵🇹 Portugués</option>
-    <option value="it">🇮🇹 Italiano</option>
-  </select>
-</div>
-
 
 </body>
 
