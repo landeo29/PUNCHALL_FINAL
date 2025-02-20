@@ -461,6 +461,20 @@ text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     font-size: 1rem;
 }
 
+.footer__services .especial a {
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff4500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+.footer__services .especial a:hover {
+    transform: scale(1.1);
+}
+
+
 .footer__links ul li a:hover {
     color: #ffd700; /* Cambia a dorado */
     transform: translateX(5px); /* Se desplaza un poco hacia la derecha */
